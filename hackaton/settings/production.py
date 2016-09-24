@@ -1,9 +1,8 @@
-from base import *
+from .base import *
 
 DEBUG = True
 ALLOWED_HOSTS = ['*']
 
-TEMPLATE_DEBUG = DEBUG
 
 DATABASES = {
     'default': {
