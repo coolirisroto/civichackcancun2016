@@ -2,13 +2,14 @@ from django.db import models
 
 
 class Funcionario(models.Model):
-    first_name = models.CharField(max_length=200)
-    last_name = models.CharField(max_length=200)
+    nombre = models.CharField(max_length=200)
+    apellido_paterno = models.CharField(max_length=200)
+    apellido_materno = models.CharField(max_length=200)
     email = models.EmailField(max_length=200)
-    picture = models.ImageField(upload_to='funcionarios/fotos', help_text='Max 200px X 200px')
+    picture = models.ImageField(upload_to='funcionarios/fotos', help_text='Max 200px X 200px', null=True, blank=True)
     institution = models.ForeignKey('Institucion')
     tag = models.ForeignKey('Tag', null=True, blank=True)
-
+    
     telefono = models.CharField(max_length=200, null=True, blank=True)
     extension = models.CharField(max_length=10, null=True, blank=True)
     id_puesto = models.CharField(max_length=200, null=True, blank=True)
