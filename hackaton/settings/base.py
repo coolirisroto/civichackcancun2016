@@ -32,8 +32,6 @@ SECRET_KEY = get_secret("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-TEMPLATE_DEBUG = DEBUG
-THUMBNAIL_DEBUG = DEBUG
 
 ALLOWED_HOSTS = []
 
@@ -60,7 +58,9 @@ INSTALLED_APPS = [
     'allauth.socialaccount.providers.twitter',
     'rest_framework_tracking',
     'import_export',
-    'nested_inline'
+    'nested_inline',
+
+    'funcionarios'
 
 ]
 
