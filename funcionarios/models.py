@@ -6,10 +6,8 @@ class Funcionario(models.Model):
     apellido_paterno = models.CharField(max_length=200)
     apellido_materno = models.CharField(max_length=200)
     email = models.EmailField(max_length=200)
-    picture = models.ImageField(upload_to='funcionarios/fotos', help_text='Max 200px X 200px', null=True, blank=True)
-    institution = models.ForeignKey('Institucion')
-    tag = models.ForeignKey('Tag', null=True, blank=True)
-    
+    # picture = models.ImageField(upload_to='funcionarios/fotos', help_text='Max 200px X 200px', null=True, blank=True)
+    tags = models.ManyToManyField('Tag')
     telefono = models.CharField(max_length=200, null=True, blank=True)
     extension = models.CharField(max_length=10, null=True, blank=True)
     id_puesto = models.CharField(max_length=200, null=True, blank=True)
@@ -34,6 +32,8 @@ class Funcionario(models.Model):
     FOVISSSTE = models.CharField(max_length=200, null=True, blank=True)
     SAR = models.CharField(max_length=200, null=True, blank=True)
 
+    def __str__(self):
+        return ' '.join([self.nombre, self.apellido_materno, self.apellido_paterno])
 
 class Institucion(models.Model):
     nombre = models.CharField(max_length=200)

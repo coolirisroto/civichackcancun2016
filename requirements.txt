@@ -8,4 +8,4 @@ djangorestframework==3.3.2
 drf-nested-routers==0.11.1
 drf-tracking==0.2.5
 django-import-export
-Pillow==3.3.0
+djangorestframework-bulk
