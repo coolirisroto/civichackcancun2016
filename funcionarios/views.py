@@ -6,3 +6,4 @@ from .models import Funcionario
 class FuncionarioViewSet(viewsets.ModelViewSet):
     serializer_class = FuncionarioSerializer
     queryset = Funcionario.objects.none()
+    permission_classes = []

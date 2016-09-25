@@ -7,6 +7,7 @@ class Funcionario(models.Model):
     apellido_materno = models.CharField(max_length=200)
     email = models.EmailField(max_length=200)
     # picture = models.ImageField(upload_to='funcionarios/fotos', help_text='Max 200px X 200px', null=True, blank=True)
+    institution = models.ForeignKey('Institucion')
     tags = models.ManyToManyField('Tag')
     telefono = models.CharField(max_length=200, null=True, blank=True)
     extension = models.CharField(max_length=10, null=True, blank=True)
